@@ -1,4 +1,4 @@
-import React from "react";
+import { BrowserRouter } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import Router from "./route/Router";
@@ -12,8 +12,14 @@ const root = ReactDOM.createRoot(
 );
 root.render(
 	<Provider store={store}>
-		<Header />
-		<Router />
-		<Footer />
+		<BrowserRouter>
+			<main id="app" className="drawer">
+				<section className="drawer-content">
+					<Header />
+					<Router />
+					<Footer />
+				</section>
+			</main>
+		</BrowserRouter>
 	</Provider>
 );

@@ -1,19 +1,21 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Home from "pages/Home";
 import Accessory from "pages/Accessory";
 import Digital from "pages/Digital";
 import Fashion from "pages/Fashion";
+import Product from "pages/Product";
+import Cart from "pages/Cart";
 
 const Router = () => {
 	return (
-		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<Home />}></Route>
-				<Route path="/accessory" element={<Accessory />}></Route>
-				<Route path="/digital" element={<Digital />}></Route>
-				<Route path="/fashion" element={<Fashion />}></Route>
-			</Routes>
-		</BrowserRouter>
+		<Routes>
+			<Route path="/" element={<Home />} />
+			<Route path="/accessory" element={<Accessory />} />
+			<Route path="/digital" element={<Digital />} />
+			<Route path="/fashion" element={<Fashion />} />
+			<Route path="/cart" element={<Cart />} />
+			<Route path="/product:id" element={<Product />} />
+		</Routes>
 	);
 };
 
