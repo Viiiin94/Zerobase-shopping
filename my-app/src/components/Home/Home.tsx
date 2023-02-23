@@ -1,16 +1,14 @@
-import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "store/hooks";
-import { fetchProduct } from "service/ProductSlice";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import CardHome from "./CardHome";
+import CarouselHome from "./CarouselHome";
 
 const Home = () => {
-	const product = useAppSelector((state) => state.product);
-	const dispatch = useAppDispatch();
-
-	useEffect(() => {
-		dispatch(fetchProduct());
-	}, [dispatch]);
-
-	return <div>Home</div>;
+	return (
+		<>
+			<CarouselHome />
+			<CardHome />
+		</>
+	);
 };
 
 export default Home;

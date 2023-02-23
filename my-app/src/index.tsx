@@ -13,10 +13,12 @@ const root = ReactDOM.createRoot(
 root.render(
 	<Provider store={store}>
 		<BrowserRouter>
-			<main id="app" className="drawer">
+			<main id="app">
 				<section className="drawer-content">
 					<Header />
-					<Router />
+					<section className="main pt-16">
+						<Router />
+					</section>
 					<Footer />
 				</section>
 			</main>

@@ -9,6 +9,4 @@ export type ProductType = {
 		rate: number;
 		count: number;
 	};
-};
-
-export type CategoryType = Pick<ProductType, "category">;
+}[];
