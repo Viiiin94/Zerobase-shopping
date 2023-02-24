@@ -14,7 +14,7 @@ const Accessory = () => {
 
 	const digitArr = [];
 
-	for (let i = 0; i < 20; i++) {
+	for (let i = 0; i < product.length; i++) {
 		if (product[i] !== undefined) {
 			if (product[i].category === "electronics") digitArr.push(product[i]);
 		}

@@ -8,10 +8,9 @@ const Skleton = () => {
 			{skeletonArr.map((item, idx) => {
 				return (
 					<Link
-						to={`../product/${item}_${idx}`}
+						to={`/`}
 						className="card card-bordered border-gray-200 dark:border-gray-800 card-compact lg:card-normal"
-						key={idx}
-						state={item}
+						key={`_${item}_${idx}_`}
 					>
 						<figure className="flex h-80 bg-white overflow-hidden">
 							<div></div>

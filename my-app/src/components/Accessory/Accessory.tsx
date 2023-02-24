@@ -14,7 +14,7 @@ const Accessory = () => {
 
 	const accArr = [];
 
-	for (let i = 0; i < 20; i++) {
+	for (let i = 0; i < product.length; i++) {
 		if (product[i] !== undefined) {
 			if (product[i].category === "jewelery") accArr.push(product[i]);
 		}

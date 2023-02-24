@@ -1,24 +1,9 @@
-import { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "store/hooks";
-import { fetchProduct } from "service/ProductSlice";
 import { Link } from "react-router-dom";
 import { FiShoppingCart } from "react-icons/fi";
-import DarkModeHeader from "./DarkModeHeader";
+import DarkModeHeader from "./HeaderCommon/DarkModeHeader";
+import DropdownHeader from "./HeaderCommon/DropdownHeader";
 
 const Header = () => {
-	const [value, setValue] = useState();
-
-	const product = useAppSelector((state) => state.product);
-	const dispatch = useAppDispatch();
-
-	useEffect(() => {
-		dispatch(fetchProduct());
-	}, [dispatch]);
-
-	useEffect(() => {
-		setValue(value);
-	}, [value]);
-
 	return (
 		<div className="fixed z-10 w-full navbar shadow-lg bg-white dark:bg-gray-900 text-neutral-content">
 			<div className="flex w-full xl:container xl:m-auto">
@@ -52,15 +37,7 @@ const Header = () => {
 				</div>
 				<div className="flex items-center px-2">
 					<DarkModeHeader />
-					<div className="dropdown">
-						<input
-							type="text"
-							placeholder="검색"
-							className="fixed left-0 top-4 -z-10 opacity-0 sm:opacity-100 sm:static sm:flex w-full input input-ghost focus:outline-0 rounded-none sm:rounded bg-gray-300 dark:bg-gray-600 !text-gray-800 dark:!text-white sm:transform-none transition-all js-searchInput"
-							value={value}
-						/>
-						<ul className="!fixed left-0 sm:!absolute sm:top-14 menu dropdown-content w-full sm:w-64 max-h-96 shadow text-base-content overflow-y-auto bg-white dark:bg-gray-600"></ul>
-					</div>
+					<DropdownHeader />
 					<Link to="/cart" className="btn btn-ghost w-10 sm:w-12 ml-1">
 						<span className="relative">
 							<FiShoppingCart className="text-black dark:text-white font-bold" />
