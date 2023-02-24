@@ -36,9 +36,10 @@ const Accessory = () => {
 						accArr.map((item, idx) => {
 							return (
 								<Link
-									to={`product/${item.id}`}
+									to={`../product/${item.id}`}
 									className="card card-bordered border-gray-200 dark:border-gray-800 card-compact lg:card-normal"
 									key={idx}
+									state={item}
 								>
 									<figure className="flex h-80 bg-white overflow-hidden">
 										<img
