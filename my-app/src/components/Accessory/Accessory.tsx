@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "store/hooks";
 import { fetchProduct } from "service/ProductSlice";
 import { Link } from "react-router-dom";
+import Skleton from "components/Common/Skleton";
 
 const Accessory = () => {
 	const product = useAppSelector((state) => state.product.products);
@@ -14,10 +15,13 @@ const Accessory = () => {
 	const accArr = [];
 
 	for (let i = 0; i < 20; i++) {
-		if (product[i].category === "jewelery") accArr.push(product[i]);
+		if (product[i] !== undefined) {
+			if (product[i].category === "jewelery") accArr.push(product[i]);
+		}
 	}
+
 	return (
-		<section className="pt-4 lg:pt-5 pb-4 lg:pb-8 px-4 xl:px-2 xl:container mx-auto">
+		<section className="pt-4 lg:pt-5 pb-4 lg:pb-8 px-4 xl:px-2 xl:container mx-auto dark:text-gray-300">
 			<div className="text-sm breadcrumbs">
 				<ul>
 					<li>홈</li>
@@ -32,7 +36,7 @@ const Accessory = () => {
 					className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 item_list"
 					data-scroll="true"
 				>
-					{accArr[0] !== undefined &&
+					{accArr[0] !== undefined ? (
 						accArr.map((item, idx) => {
 							return (
 								<Link
@@ -45,7 +49,7 @@ const Accessory = () => {
 										<img
 											src={`${item.image}`}
 											alt="상품이미지"
-											className="transition-transform duration-300"
+											className="scale-50 transition-transform duration-500 ease-in-out hover:scale-75"
 										/>
 									</figure>
 									<div className="card-body bg-gray-100 dark:bg-gray-700">
@@ -54,7 +58,10 @@ const Accessory = () => {
 									</div>
 								</Link>
 							);
-						})}
+						})
+					) : (
+						<Skleton />
+					)}
 				</div>
 			</article>
 		</section>

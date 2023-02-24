@@ -16,7 +16,7 @@ root.render(
 			<main id="app">
 				<section className="drawer-content">
 					<Header />
-					<section className="main pt-16">
+					<section className="main pt-16 dark:bg-gray-700">
 						<Router />
 					</section>
 					<Footer />

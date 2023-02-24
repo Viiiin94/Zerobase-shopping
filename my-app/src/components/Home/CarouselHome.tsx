@@ -5,7 +5,7 @@ const CarouselHome = () => {
 	return (
 		<Carousel className="carousel-container">
 			<div>
-				<div className="carousel-description absolute left-auto right-auto bottom-1/3 mb-10 text-left w-full lg:container px-4 md:px-10">
+				<div className="carousel-description absolute left-auto right-auto bottom-1/3 mb-10 text-left w-full lg:container px-4 md:px-10 dark:text-gray-700">
 					<h2 className="text-2xl lg:text-4xl font-bold text-white">
 						세련된 23SS 패션!
 					</h2>
@@ -36,10 +36,10 @@ const CarouselHome = () => {
 			</div>
 			<div>
 				<div className="carousel-description absolute left-auto right-auto bottom-1/3 mb-10 text-left w-full lg:container px-4 md:px-10">
-					<h2 className="text-2xl lg:text-4xl font-bold text-yellow">
+					<h2 className="text-2xl lg:text-4xl font-bold text-black">
 						카메라 어떠세요?
 					</h2>
-					<p className="my-2 text-yellow">다양한 디지털 상품을 봅시다.</p>
+					<p className="my-2 text-black">다양한 디지털 상품을 봅시다.</p>
 					<Link to="/digital" className="btn btn-sm lg:btn-md mt-3">
 						바로가기
 					</Link>
@@ -51,10 +51,10 @@ const CarouselHome = () => {
 			</div>
 			<div>
 				<div className="carousel-description absolute left-auto right-auto bottom-1/3 mb-10 text-left w-full lg:container px-4 md:px-10">
-					<h2 className="text-2xl lg:text-4xl font-bold text-yellow">
+					<h2 className="text-2xl lg:text-4xl font-bold text-white">
 						신선한 과일보고 갈래?
 					</h2>
-					<p className="my-2 text-yellow">과일, 채소, 재료, 해산물 등등..</p>
+					<p className="my-2 text-white">과일, 채소, 재료, 해산물 등등..</p>
 					<Link to="/grocery" className="btn btn-sm lg:btn-md mt-3">
 						바로가기
 					</Link>

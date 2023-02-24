@@ -17,7 +17,7 @@ const Product = () => {
 	}, [value, category]);
 
 	return (
-		<section className="pt-4 lg:pt-5 pb-4 lg:pb-8 px-4 xl:px-2 xl:container mx-auto">
+		<section className="pt-4 lg:pt-5 pb-4 lg:pb-8 px-4 xl:px-2 xl:container mx-auto dark:text-gray-200">
 			<div>
 				<div className="text-sm breadcrumbs">
 					<ul>
@@ -47,8 +47,11 @@ const Product = () => {
 						</div>
 						<p className="mt-2 mb-4 text-3xl">${price}</p>
 						<div className="card-actions">
-							<button className="btn btn-primary">장바구니에 담기</button>
-							<Link to="/cart" className="btn btn-outline ml-1">
+							<button className="btn btn-primary ">장바구니에 담기</button>
+							<Link
+								to="/cart"
+								className="btn btn-outline ml-1 dark:text-gray-200"
+							>
 								장바구니로 이동
 							</Link>
 						</div>

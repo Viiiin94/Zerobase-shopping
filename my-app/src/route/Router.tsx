@@ -5,6 +5,7 @@ import Digital from "pages/Digital";
 import Fashion from "pages/Fashion";
 import Product from "pages/Product";
 import Cart from "pages/Cart";
+import NotFound from "pages/NotFound";
 
 const Router = () => {
 	return (
@@ -15,6 +16,7 @@ const Router = () => {
 			<Route path="/fashion" element={<Fashion />} />
 			<Route path="/cart" element={<Cart />} />
 			<Route path="/product/:id" element={<Product />} />
+			<Route path="*" element={<NotFound />} />
 		</Routes>
 	);
 };

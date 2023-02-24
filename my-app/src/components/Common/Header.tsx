@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from "store/hooks";
 import { fetchProduct } from "service/ProductSlice";
 import { Link } from "react-router-dom";
 import { FiShoppingCart } from "react-icons/fi";
+import DarkModeHeader from "./DarkModeHeader";
 
 const Header = () => {
 	const [value, setValue] = useState();
@@ -19,7 +20,7 @@ const Header = () => {
 	}, [value]);
 
 	return (
-		<div className="fixed z-10 w-full navbar shadow-lg bg-white dark:bg-neutral text-neutral-content">
+		<div className="fixed z-10 w-full navbar shadow-lg bg-white dark:bg-gray-900 text-neutral-content">
 			<div className="flex w-full xl:container xl:m-auto">
 				<h1 className="shrink-0 flex md:flex-none flex-1 mx-1 sm:mx-2">
 					<Link
@@ -32,29 +33,25 @@ const Header = () => {
 				<div className="flex-none hidden md:flex md:flex-1 ml-2">
 					<Link
 						to="/fashion"
-						className="btn btn-ghost btn-sm rounded-btn text-gray-700"
+						className="btn btn-ghost btn-sm rounded-btn text-gray-700 dark:text-white"
 					>
 						패션
 					</Link>
 					<Link
 						to="/accessory"
-						className="btn btn-ghost btn-sm rounded-btn text-gray-700"
+						className="btn btn-ghost btn-sm rounded-btn text-gray-700 dark:text-white"
 					>
 						악세서리
 					</Link>
 					<Link
 						to="/digital"
-						className="btn btn-ghost btn-sm rounded-btn text-gray-700"
+						className="btn btn-ghost btn-sm rounded-btn text-gray-700 dark:text-white"
 					>
 						디지털
 					</Link>
 				</div>
 				<div className="flex items-center px-2">
-					<label className="swap swap-flip mr-2 sm:mr-4 text-3xl">
-						<input type="checkbox" className="js-theme" />
-						<div className="swap-on">😈</div>
-						<div className="swap-off">😇</div>
-					</label>
+					<DarkModeHeader />
 					<div className="dropdown">
 						<input
 							type="text"
@@ -66,7 +63,7 @@ const Header = () => {
 					</div>
 					<Link to="/cart" className="btn btn-ghost w-10 sm:w-12 ml-1">
 						<span className="relative">
-							<FiShoppingCart />
+							<FiShoppingCart className="text-black dark:text-white font-bold" />
 							<span className="inline-flex items-center justify-center absolute top-0 right-0 px-2 py-1 rounded-full bg-red-500 text-xs font-bold leading-none text-gray-200 transform translate-x-1/2 -translate-y-1/2">
 								0
 							</span>

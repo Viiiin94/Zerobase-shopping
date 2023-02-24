@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "store/hooks";
 import { fetchProduct } from "service/ProductSlice";
 import { Link } from "react-router-dom";
+import Skleton from "components/Common/Skleton";
 
 const CardHome = () => {
 	const product = useAppSelector((state) => state.product.products);
@@ -27,7 +28,7 @@ const CardHome = () => {
 
 	return (
 		<>
-			<section className="pt-6 lg:pt-12 pb-4 lg:pb-8 px-4 xl:px-2 mt-10 xl:container mx-auto">
+			<section className="pt-6 lg:pt-12 pb-4 lg:pb-8 px-4 xl:px-2 mt-10 xl:container mx-auto dark:text-gray-200 dark:bg-gray-700">
 				<h2 className="mb-5 lg:mb-8 text-3xl lg:text-4xl text-center font-bold">
 					패션
 				</h2>
@@ -35,7 +36,7 @@ const CardHome = () => {
 					className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 item_list"
 					data-scroll="true"
 				>
-					{fashionArr[0] &&
+					{fashionArr[0] ? (
 						fashionArr.map((item, idx) => {
 							return (
 								<Link
@@ -48,7 +49,7 @@ const CardHome = () => {
 										<img
 											src={`${item.image}`}
 											alt="상품이미지"
-											className="transition-transform duration-300"
+											className="scale-50 transition-transform duration-500 ease-in-out hover:scale-75"
 										/>
 									</figure>
 									<div className="card-body bg-gray-100 dark:bg-gray-700">
@@ -57,18 +58,21 @@ const CardHome = () => {
 									</div>
 								</Link>
 							);
-						})}
+						})
+					) : (
+						<Skleton />
+					)}
 				</div>
 			</section>
-			<section className="pt-6 lg:pt-12 pb-4 lg:pb-8 px-4 xl:px-2 mt-10 xl:container mx-auto">
+			<section className="pt-6 lg:pt-12 pb-4 lg:pb-8 px-4 xl:px-2 mt-10 xl:container mx-auto dark:text-gray-200 dark:bg-gray-700">
 				<h2 className="mb-5 lg:mb-8 text-3xl lg:text-4xl text-center font-bold">
-					패션
+					악세서리
 				</h2>
 				<div
 					className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 item_list"
 					data-scroll="true"
 				>
-					{accArr[0] &&
+					{accArr[0] ? (
 						accArr.map((item, idx) => {
 							return (
 								<Link
@@ -81,7 +85,7 @@ const CardHome = () => {
 										<img
 											src={`${item.image}`}
 											alt="상품이미지"
-											className="transition-transform duration-300"
+											className="scale-50 transition-transform duration-500 ease-in-out hover:scale-75"
 										/>
 									</figure>
 									<div className="card-body bg-gray-100 dark:bg-gray-700">
@@ -90,18 +94,21 @@ const CardHome = () => {
 									</div>
 								</Link>
 							);
-						})}
+						})
+					) : (
+						<Skleton />
+					)}
 				</div>
 			</section>
-			<section className="pt-6 lg:pt-12 pb-4 lg:pb-8 px-4 xl:px-2 mt-10 xl:container mx-auto">
+			<section className="pt-6 lg:pt-12 pb-4 lg:pb-8 px-4 xl:px-2 mt-10 xl:container mx-auto dark:text-gray-200 dark:bg-gray-700">
 				<h2 className="mb-5 lg:mb-8 text-3xl lg:text-4xl text-center font-bold">
-					패션
+					디지털
 				</h2>
 				<div
 					className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 item_list"
 					data-scroll="true"
 				>
-					{digitArr[0] &&
+					{digitArr[0] ? (
 						digitArr.map((item, idx) => {
 							return (
 								<Link
@@ -114,7 +121,7 @@ const CardHome = () => {
 										<img
 											src={`${item.image}`}
 											alt="상품이미지"
-											className="transition-transform duration-300"
+											className="scale-50 transition-transform duration-500 ease-in-out hover:scale-75"
 										/>
 									</figure>
 									<div className="card-body bg-gray-100 dark:bg-gray-700">
@@ -123,7 +130,10 @@ const CardHome = () => {
 									</div>
 								</Link>
 							);
-						})}
+						})
+					) : (
+						<Skleton />
+					)}
 				</div>
 			</section>
 		</>

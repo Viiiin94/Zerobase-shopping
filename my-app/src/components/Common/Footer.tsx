@@ -10,7 +10,7 @@ import { ReactComponent as Github } from "assets/icons/github.svg";
 
 const Footer = () => {
 	return (
-		<footer className="p-10 footer bg-base-200 text-base-content footer-center">
+		<footer className="p-10 footer bg-base-200 text-base-content footer-center dark:bg-gray-900 dark:text-gray-400">
 			<div className="grid grid-flow-col gap-4">
 				<a
 					href="https://zero-base.co.kr/"
