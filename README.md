@@ -2,8 +2,8 @@
 제로베이스 2차과제
 
 ## 사용한 기술
-React, TypeScript, Redux-toolkit, Tailwind CSS
-react-router-dom, react-responsive-carousel
+> React, TypeScript, Redux-toolkit, Tailwind CSS
+> react-router-dom, react-responsive-carousel
 
 ## SPA 프레임워크
 
@@ -40,10 +40,10 @@ npm install react-redux @reduxjs/toolkit
 - zustand와 context API를 직전 프로젝트에서 사용을 했습니다. 두 개다 너무 편했지만 대규모 상태관리에는 redux가 좋다고해서 사용했습니다.
 
 ## 고안점 체크사항
-- []: react 18 최신버전에 따른 사항 업데이트하기
-- []: vercel 배포하기, 안된다면 netlify로 배포하기
-- []: 다른 상태관리 사용해보기 ex) zustand와 react-query 같이사용해보기
-- []: 버그, 에러, 수정하기
+- [ ] : react 18 최신버전에 따른 사항 업데이트하기
+- [ ] : vercel 배포하기, 안된다면 netlify로 배포하기
+- [ ] : 다른 상태관리 사용해보기 ex) zustand와 react-query 같이사용해보기
+- [ ] : 버그, 에러, 수정하기
 
 ## 느낀점
 - 이제와서 이 개인 프로젝트를 시작한게 상당히 아쉽습니다... 기간내에 프로젝트를 진행하여 완성해서 부족한 점을 체크했으면 좋았을 텐데.. 아쉽다
