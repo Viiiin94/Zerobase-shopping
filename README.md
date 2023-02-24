@@ -1,6 +1,10 @@
 # Zerobase-shopping
 제로베이스 2차과제
 
+## 사용한 기술
+React, TypeScript, Redux-toolkit, Tailwind CSS
+react-router-dom, react-responsive-carousel
+
 ## SPA 프레임워크
 
 CRA - Create React App
