@@ -1,7 +1,7 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
+	// const arr = JSON.parse(localStorage.getItem("cart"));
 	return (
 		<section className="pt-4 lg:pt-5 pb-4 lg:pb-8 px-4 xl:px-2 xl:container mx-auto dark:text-gray-300 dark:bg-gray-700">
 			<div className="text-sm breadcrumbs">

@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Product = () => {
 	const [value, setValue] = useState<string>("");
-	const { category, description, image, price, title, rating } =
+	const [counting, setCounting] = useState<number>(1);
+	const { id, category, description, image, price, title, rating } =
 		useLocation().state;
 
 	useEffect(() => {
@@ -15,6 +16,18 @@ const Product = () => {
 			setValue("디지털");
 		}
 	}, [value, category]);
+
+	const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+		setCounting(parseInt(e.target.value));
+	};
+
+	const onSubmit = (e: FormEvent) => {
+		e.preventDefault();
+		localStorage.setItem(
+			"cart",
+			JSON.stringify({ id: id, title: title, price: price, counting: counting })
+		);
+	};
 
 	return (
 		<section className="pt-4 lg:pt-5 pb-4 lg:pb-8 px-4 xl:px-2 xl:container mx-auto dark:text-gray-200">
@@ -47,7 +60,12 @@ const Product = () => {
 						</div>
 						<p className="mt-2 mb-4 text-3xl">${price}</p>
 						<div className="card-actions">
-							<button className="btn btn-primary ">장바구니에 담기</button>
+							<label
+								htmlFor="confirm-modal"
+								className="modal-button btn btn-primary "
+							>
+								장바구니에 담기
+							</label>
 							<Link
 								to="/cart"
 								className="btn btn-outline ml-1 dark:text-gray-200"
@@ -56,6 +74,31 @@ const Product = () => {
 							</Link>
 						</div>
 					</div>
+				</div>
+			</div>
+			<input type="checkbox" id="confirm-modal" className="modal-toggle" />
+			<div className="modal">
+				<div className="modal-box dark:bg-gray-500">
+					<h3 className="font-bold text-lg">장바구니에 담겠습니까?</h3>
+					<p className="py-4">몇개를 구하겠습니까?</p>
+					<form className="modal-action dark:text-gray-200" onSubmit={onSubmit}>
+						<input
+							type="number"
+							min={1}
+							max={9}
+							onChange={onChange}
+							className="border w-10 rounded-lg dark:text-gray-900"
+						/>
+						<button className="btn btn-primary">
+							<label htmlFor="confirm-modal">네</label>
+						</button>
+						<label
+							htmlFor="confirm-modal"
+							className="btn btn-outline dark:text-gray-200"
+						>
+							아니오
+						</label>
+					</form>
 				</div>
 			</div>
 		</section>

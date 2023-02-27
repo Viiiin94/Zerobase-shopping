@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 import { ProductType } from "../types/product";
 
@@ -28,9 +28,12 @@ export const productSlice = createSlice({
 	initialState,
 	reducers: {},
 	extraReducers: (builder) => {
-		builder.addCase(fetchProduct.fulfilled, (state, action) => {
-			state.products = action.payload;
-		});
+		builder.addCase(
+			fetchProduct.fulfilled,
+			(state, action: PayloadAction<ProductType>) => {
+				state.products = action.payload;
+			}
+		);
 	},
 });
 
