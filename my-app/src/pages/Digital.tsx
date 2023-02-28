@@ -1,4 +1,4 @@
-import Root from "../components/Digital/Digital";
+import Root from "components/Digital/Digital";
 
 const Digital = () => {
 	return (

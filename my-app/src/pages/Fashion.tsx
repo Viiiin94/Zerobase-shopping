@@ -1,4 +1,4 @@
-import Root from "../components/Fashion/Fashion";
+import Root from "components/Fashion/Fashion";
 
 const Fashion = () => {
 	return (

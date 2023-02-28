@@ -1,11 +1,12 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
-import { ProductType } from "../types/product";
+import { ProductType } from "types/product";
 
 const create = axios.create();
+const API_URL = process.env.REACT_APP_API_URL as string;
 
 export const fetchProductAPI = async () => {
-	const BASE_URL = "https://fakestoreapi.com/products";
+	const BASE_URL = API_URL;
 	const { data } = await create.get<ProductType>(BASE_URL);
 	return data;
 };

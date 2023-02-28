@@ -1,4 +1,4 @@
-import Root from "../components/Home/Home";
+import Root from "components/Home/Home";
 
 const Home = () => {
 	return (

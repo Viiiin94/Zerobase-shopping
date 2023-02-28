@@ -1,4 +1,4 @@
-import Root from "../components/Accessory/Accessory";
+import Root from "components/Accessory/Accessory";
 
 const Accessory = () => {
 	return (
