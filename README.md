@@ -41,7 +41,7 @@ npm install react-redux @reduxjs/toolkit
 
 ## 고안점 체크사항
 - [ ] : react 18 최신버전에 따른 사항 업데이트하기
-- [ ] : vercel 배포하기, 안된다면 netlify로 배포하기
+- [x] : vercel 배포하기, 안된다면 netlify로 배포하기
 - [ ] : 다른 상태관리 사용해보기 ex) zustand와 react-query 같이사용해보기
 - [ ] : PWA와 미디어쿼리 적용하기
 
