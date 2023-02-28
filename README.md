@@ -3,7 +3,7 @@
 
 ## 사용한 기술
 > React, TypeScript, Redux-toolkit, Tailwind CSS
-> react-router-dom, react-responsive-carousel
+> react-router-dom, react-responsive-carousel, Vercel
 
 ## SPA 프레임워크
 
@@ -41,7 +41,7 @@ npm install react-redux @reduxjs/toolkit
 
 ## 고안점 체크사항
 - [ ] : react 18 최신버전에 따른 사항 업데이트하기
-- [ ] : vercel 배포하기, 안된다면 netlify로 배포하기
+- [x] : vercel 배포하기, 안된다면 netlify로 배포하기
 - [ ] : 다른 상태관리 사용해보기 ex) zustand와 react-query 같이사용해보기
 - [ ] : PWA와 미디어쿼리 적용하기
 
@@ -49,3 +49,4 @@ npm install react-redux @reduxjs/toolkit
 - 이제와서 이 개인 프로젝트를 시작한게 상당히 아쉽습니다... 기간내에 프로젝트를 진행하여 완성해서 부족한 점을 체크했으면 좋았을 텐데.. 아쉽다
 - 다행인 점은 직전 프로젝트에서 많은 것을 배울 수 있어서 layout, CSS 설정 말고 다른 기능을 추가하는데 비교적 빠르게 진행했습니다.
 - 그래도 typescript는 vite로 사용하는게 훨씬 좋았습니다...
+- 개인 프로젝트에서 vercel 배포와 환경변수를 설정하는 법은 쉬웠습니다. serverless나 기타 환경변수들의 설정하는 법을 알아야겠습니다.
