@@ -11,3 +11,17 @@ export type ProductType = {
 	};
 	counting?: number;
 }[];
+
+export type ProductCartType = {
+	id: number;
+	category: string;
+	description: string;
+	image: string;
+	price: number;
+	title: string;
+	rating: {
+		rate: number;
+		count: number;
+	};
+	counting: number;
+};

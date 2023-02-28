@@ -1,11 +1,19 @@
 import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { ProductCartType } from "types/product";
 
 const Product = () => {
 	const [value, setValue] = useState<string>("");
 	const [counting, setCounting] = useState<number>(1);
-	const { id, category, description, image, price, title, rating } =
-		useLocation().state;
+	const {
+		id,
+		category,
+		description,
+		image,
+		price,
+		title,
+		rating,
+	}: ProductCartType = useLocation().state;
 
 	useEffect(() => {
 		if (category === "men's clothing" || category === "women's clothing") {
@@ -23,10 +31,10 @@ const Product = () => {
 
 	const onSubmit = (e: FormEvent) => {
 		e.preventDefault();
-		localStorage.setItem(
-			"cart",
-			JSON.stringify({ id: id, title: title, price: price, counting: counting })
-		);
+		const cartArr = [
+			{ id: id, title: title, image: image, price: price, counting: counting },
+		];
+		localStorage.setItem(`${id}`, JSON.stringify(cartArr));
 	};
 
 	return (
@@ -87,7 +95,8 @@ const Product = () => {
 							min={1}
 							max={9}
 							onChange={onChange}
-							className="border w-10 rounded-lg dark:text-gray-900"
+							className="border pl-4 rounded-lg dark:text-gray-900"
+							placeholder="0"
 						/>
 						<button className="btn btn-primary">
 							<label htmlFor="confirm-modal">네</label>
