@@ -1,29 +1,30 @@
-import { ChangeEvent, useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "store/hooks";
-import { fetchProduct } from "service/ProductSlice";
-import { Link } from "react-router-dom";
+/* eslint-disable array-callback-return */
+import { ChangeEvent, useEffect, useState } from "react"
+import { useAppDispatch, useAppSelector } from "store/hooks"
+import { fetchProduct } from "service/ProductSlice"
+import { Link } from "react-router-dom"
 
 const DropdownHeader = () => {
-	const [input, setInput] = useState<string>("");
+	const [input, setInput] = useState<string>("")
 
-	const product = useAppSelector((state) => state.product.products);
-	const dispatch = useAppDispatch();
+	const product = useAppSelector((state) => state.product.products)
+	const dispatch = useAppDispatch()
 
 	useEffect(() => {
-		dispatch(fetchProduct());
-	}, [dispatch]);
+		dispatch(fetchProduct())
+	}, [dispatch])
 
-	const productArr = [];
+	const productArr = []
 
 	for (let i = 0; i < product.length; i++) {
 		if (product[0] !== undefined) {
-			productArr.push(product[i]);
+			productArr.push(product[i])
 		}
 	}
 
 	const onChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
-		setInput(e.target.value);
-	};
+		setInput(e.target.value)
+	}
 
 	return (
 		<div className="dropdown">
@@ -53,12 +54,12 @@ const DropdownHeader = () => {
 									</span>
 								</Link>
 							</li>
-						);
+						)
 					}
 				})}
 			</ul>
 		</div>
-	);
-};
+	)
+}
 
-export default DropdownHeader;
+export default DropdownHeader

@@ -6,7 +6,8 @@ const create = axios.create()
 const API_URL = process.env.REACT_APP_API_URL as string
 
 export const fetchProductAPI = async () => {
-	const { data } = await create.get<ProductType>(API_URL)
+	const BASE_URL = API_URL
+	const { data } = await create.get<ProductType>(BASE_URL)
 	return data
 }
 

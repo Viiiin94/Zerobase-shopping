@@ -1,10 +1,10 @@
-import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { ProductCartType } from "types/product";
+import React, { ChangeEvent, FormEvent, useEffect, useState } from "react"
+import { Link, useLocation } from "react-router-dom"
+import { ProductCartType } from "types/product"
 
 const Product = () => {
-	const [value, setValue] = useState<string>("");
-	const [counting, setCounting] = useState<number>(1);
+	const [value, setValue] = useState<string>("")
+	const [counting, setCounting] = useState<number>(1)
 	const {
 		id,
 		category,
@@ -13,29 +13,29 @@ const Product = () => {
 		price,
 		title,
 		rating,
-	}: ProductCartType = useLocation().state;
+	}: ProductCartType = useLocation().state
 
 	useEffect(() => {
 		if (category === "men's clothing" || category === "women's clothing") {
-			setValue("패션");
+			setValue("패션")
 		} else if (category === "jewelery") {
-			setValue("액세서리");
+			setValue("액세서리")
 		} else if (category === "electronics") {
-			setValue("디지털");
+			setValue("디지털")
 		}
-	}, [value, category]);
+	}, [value, category])
 
 	const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-		setCounting(parseInt(e.target.value));
-	};
+		setCounting(parseInt(e.target.value))
+	}
 
 	const onSubmit = (e: FormEvent) => {
-		e.preventDefault();
+		e.preventDefault()
 		const cartArr = [
 			{ id: id, title: title, image: image, price: price, counting: counting },
-		];
-		localStorage.setItem(`${id}`, JSON.stringify(cartArr));
-	};
+		]
+		localStorage.setItem(`${id}`, JSON.stringify(cartArr))
+	}
 
 	return (
 		<section className="pt-4 lg:pt-5 pb-4 lg:pb-8 px-4 xl:px-2 xl:container mx-auto dark:text-gray-200">
@@ -111,7 +111,7 @@ const Product = () => {
 				</div>
 			</div>
 		</section>
-	);
-};
+	)
+}
 
-export default Product;
+export default Product
