@@ -38,8 +38,8 @@ const DropdownHeader = () => {
 			<ul className="!fixed left-0 sm:!absolute sm:top-14 menu dropdown-content w-full sm:w-64 max-h-96 shadow text-base-content overflow-y-auto bg-white dark:bg-gray-600">
 				{productArr.map((item) => {
 					if (
-						(item.title.toLowerCase().includes(input) ||
-							item.title.toUpperCase().includes(input)) &&
+						(item.title?.toLowerCase().includes(input) ||
+							item.title?.toUpperCase().includes(input)) &&
 						input
 					) {
 						return (
