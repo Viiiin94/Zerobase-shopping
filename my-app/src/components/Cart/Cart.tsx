@@ -1,15 +1,13 @@
-import { Link } from "react-router-dom";
-import { ProductCartType } from "types/product";
+import { Link } from "react-router-dom"
+import { ProductCartType } from "types/product"
 
 const Cart = () => {
-	const arr = JSON.parse(localStorage.getItem("cart") as string);
+	const arr = JSON.parse(localStorage.getItem("cart") as string)
 
-	console.log(arr);
-
-	const onClick = () => {
-		localStorage.removeItem(`${arr.map((item: ProductCartType) => item.id)}`);
-		window.location.reload();
-	};
+	// const onClick = () => {
+	// 	localStorage.removeItem(`${arr.map((item: ProductCartType) => item.id)}`);
+	// 	window.location.reload();
+	// };
 
 	return (
 		<section className="pt-4 lg:pt-5 pb-4 lg:pb-8 px-4 xl:px-2 xl:container mx-auto dark:text-gray-300 dark:bg-gray-700">
@@ -32,7 +30,7 @@ const Cart = () => {
 						</li>
 						{arr !== null ? (
 							arr.map((item: ProductCartType) => {
-								const totalPrice = item.price * item.counting;
+								const totalPrice = item.price * item.counting
 								return (
 									<li
 										key={item.id}
@@ -55,7 +53,7 @@ const Cart = () => {
 											</button>
 										</h2>
 									</li>
-								);
+								)
 							})
 						) : (
 							<>
@@ -103,7 +101,7 @@ const Cart = () => {
 				</div>
 			</div>
 		</section>
-	);
-};
+	)
+}
 
-export default Cart;
+export default Cart

@@ -1,28 +1,30 @@
-import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "store/hooks";
-import { fetchProduct } from "service/ProductSlice";
-import { Link } from "react-router-dom";
-import Skleton from "components/Common/Skleton";
+import { useEffect } from "react"
+import { useAppDispatch, useAppSelector } from "store/hooks"
+import { fetchProduct } from "service/ProductSlice"
+import { Link } from "react-router-dom"
+import Skleton from "components/Common/Skleton"
 
 const CardHome = () => {
-	const product = useAppSelector((state) => state.product.products);
-	const dispatch = useAppDispatch();
+	const product = useAppSelector((state) => state.product.products)
+	const dispatch = useAppDispatch()
+
+	console.log(product)
 
 	useEffect(() => {
-		dispatch(fetchProduct());
-	}, [dispatch]);
+		dispatch(fetchProduct())
+	}, [dispatch])
 
-	const fashionArr = [];
-	const accArr = [];
-	const digitArr = [];
+	const fashionArr = []
+	const accArr = []
+	const digitArr = []
 
 	for (let i = 0; i < 12; i++) {
 		if (i < 4) {
-			fashionArr.push(product[i]);
+			fashionArr.push(product[i])
 		} else if (i >= 4 && i < 8) {
-			accArr.push(product[i]);
+			accArr.push(product[i])
 		} else {
-			digitArr.push(product[i]);
+			digitArr.push(product[i])
 		}
 	}
 
@@ -57,7 +59,7 @@ const CardHome = () => {
 										<p className="text-base">${item.price}</p>
 									</div>
 								</Link>
-							);
+							)
 						})
 					) : (
 						<Skleton />
@@ -93,7 +95,7 @@ const CardHome = () => {
 										<p className="text-base">${item.price}</p>
 									</div>
 								</Link>
-							);
+							)
 						})
 					) : (
 						<Skleton />
@@ -129,7 +131,7 @@ const CardHome = () => {
 										<p className="text-base">${item.price}</p>
 									</div>
 								</Link>
-							);
+							)
 						})
 					) : (
 						<Skleton />
@@ -137,7 +139,7 @@ const CardHome = () => {
 				</div>
 			</section>
 		</>
-	);
-};
+	)
+}
 
-export default CardHome;
+export default CardHome
