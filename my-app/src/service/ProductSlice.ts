@@ -1,41 +1,41 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit"
-import axios from "axios"
-import { ProductType } from "types/product"
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import axios from "axios";
+import { ProductType } from "types/product";
 
-const create = axios.create()
-const API_URL = process.env.REACT_APP_API_URL as string
+const create = axios.create();
+const API_URL = process.env.REACT_APP_API_URL as string;
 
 export const fetchProductAPI = async () => {
-	const BASE_URL = API_URL
-	const { data } = await create.get<ProductType>(BASE_URL)
-	return data
-}
+  const BASE_URL = API_URL;
+  const { data } = await create.get<ProductType>(BASE_URL);
+  return data;
+};
 
 export const fetchProduct = createAsyncThunk("product", async () => {
-	const response = await fetchProductAPI()
-	return response
-})
+  const response = await fetchProductAPI();
+  return response;
+});
 
 interface ProductState {
-	products: ProductType
+  products: ProductType;
 }
 
 const initialState = {
-	products: [],
-} as ProductState
+  products: [],
+} as ProductState;
 
 export const productSlice = createSlice({
-	name: "products",
-	initialState,
-	reducers: {},
-	extraReducers: (builder) => {
-		builder.addCase(
-			fetchProduct.fulfilled,
-			(state, action: PayloadAction<ProductType>) => {
-				state.products = action.payload
-			}
-		)
-	},
-})
+  name: "products",
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(
+      fetchProduct.fulfilled,
+      (state, action: PayloadAction<ProductType>) => {
+        state.products = [...action.payload];
+      }
+    );
+  },
+});
 
-export const productReducer = productSlice.reducer
+export const productReducer = productSlice.reducer;

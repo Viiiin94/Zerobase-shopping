@@ -1,11 +1,7 @@
 import Root from "components/Product/Product";
 
 const Product = () => {
-	return (
-		<>
-			<Root />
-		</>
-	);
+  return <Root />;
 };
 
 export default Product;

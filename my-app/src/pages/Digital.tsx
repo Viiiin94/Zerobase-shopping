@@ -1,11 +1,7 @@
 import Root from "components/Digital/Digital";
 
 const Digital = () => {
-	return (
-		<>
-			<Root />
-		</>
-	);
+  return <Root />;
 };
 
 export default Digital;
